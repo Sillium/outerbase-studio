@@ -39,3 +39,28 @@ Outerbase Studio Desktop is a lightweight Electron wrapper for the Outerbase Stu
 - **Connection Manager**: It includes a flexible connection manager, allowing you to store your connections locally in your browser. You can also store them on a server and share your connections across multiple devices.
 
 The features mentioned above are just a few of the many we offer. Give it a try to explore everything we have in store
+
+
+## Development
+
+Outerbase Studio is a [Next.js](https://nextjs.org/) app (TypeScript, Tailwind CSS).
+
+```bash
+npm install
+npm run dev        # dev server on http://localhost:3008
+```
+
+Other scripts: `npm run build`, `npm start`, `npm test` (Jest), `npm run lint`, `npm run typecheck`, `npm run format`.
+
+### Configuration
+
+All environment variables are optional (see `src/env.ts`): `BASE_URL`, `DATABASE_URL`, `DATABASE_AUTH_TOKEN`, `DATABASE_ANALYTIC_URL`, `DATABASE_ANALYTIC_AUTH_TOKEN`, `ENCRYPTION_KEY` (min. 30 characters).
+
+### Deployment
+
+The app is deployed to Cloudflare Workers via [OpenNext](https://opennext.js.org/cloudflare) (see `wrangler.jsonc`):
+
+```bash
+npm run preview    # build and preview locally
+npm run deploy     # build and deploy
+```
